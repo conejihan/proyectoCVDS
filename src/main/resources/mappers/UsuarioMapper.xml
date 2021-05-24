@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.eci.cvds.sampleprj.mybatis.mappers.UsuarioMapper">
+    <select id="consultarxUsuarioOCorreo" resultMap="UsuarioResult">
+        SELECT
+            id_usuario AS u_idusuario,
+            nombres AS u_nombres,
+            apellidos AS u_apellidos,
+            correo AS u_correo,
+            telefono AS u_telefono,
+            estado AS u_estado,
+            usuario AS u_usuario,
+            rol AS u_rol
+        FROM Usuarios
+        WHERE #{correo} = correo OR #{correo} = usuario;
+    </select>
+    <insert id="registrarUsuario">
+        INSERT INTO Usuarios(default , nombres,apellidos,correo,telefono,estado,usuario,contraseña,rol)
+        VALUES(#{nombres},#{apellidos},#{correo},#{telefono},'Activo',#{usuario},#{contraseña},#{rol});
+    </insert>
+
+    <select id="consultarUsuarioPorID" resultMap="UsuarioResult">
+        SELECT
+            id_usuario AS u_idusuario,
+            nombres AS u_nombres,
+            apellidos AS u_apellidos,
+            correo AS u_correo,
+            telefono AS u_telefono,
+            estado AS u_estado,
+            usuario AS u_usuario,
+            rol AS u_rol
+        FROM Usuarios
+        WHERE #{ID} = id_usuario;
+    </select>
+
+    <resultMap id="UsuarioResult" type="Usuario" >
+        <id property="id_usuario" column="u_idusuario"/>
+        <result property="estado" column="u_estado" />
+        <result property="nombres" column="u_nombres" />
+        <result property="apellidos" column="u_apellidos" />
+        <result property="correo" column="u_correo" />
+        <result property="telefono" column="u_telefono" />
+        <result property="usuario" column="u_usuario" />
+        <result property="rol" column="u_rol" />
+    </resultMap>
+</mapper>

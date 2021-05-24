@@ -1,0 +1,9 @@
+machine:
+  java:
+    version: oraclejdk8
+
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: blcn-cvds-2021-2

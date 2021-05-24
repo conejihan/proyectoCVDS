@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    	<meta charset="UTF-8"/>
+    	<title>solidaridad ECI - Login</title>
+        <link rel="stylesheet" type="text/css" href= "css/login.css" media="screen"/>
+    </h:head>
+
+
+    <h:body>
+        <!--=========================================== SHAPES ===========================================-->
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+        	<!--SQURES - RECTANGLES-->
+            <rect id="WelcomeRec" x="80" y="80" width="505" height="145" rx="40" ry="40" fill="White"/>
+            <rect id="BigRec" x="211" y="288" width="983" height="713" rx="40" ry="40" fill="White"/>
+            <rect id="MsgRec" x="250" y="318" width="878" height="108" rx="40" ry="40" fill="White"/>
+            <rect id="LoginRec" x="1511" y="248" width="191" height="88" rx="40" ry="40" fill="Black"/>
+            <rect id="RegisterRec" x="1408" y="367" width="294" height="88" rx="40" ry="40" fill="Black"/>
+            <!--CIRCLES-->
+            <circle id="LoginCircle" cx="1770" cy="290" r="42" fill="White"/>
+            <circle id="RegisterCircle" cx="1770" cy="410" r="42" fill="White"/>
+        </svg>
+
+        <!--=========================================== IMAGES ===========================================-->
+        <img id="HappyFace" src="images/HappyFace.png" width="84" height="84"/>
+        <img id="Solidaridad" src="images/SolidaridadECI.png" width="361" height="161"/>
+        <a href="https://www.escuelaing.edu.co/es/"><img id="Logo" src="images/LOGO_COLOR_ESCUELA.png" width="328" height="125"/></a>
+        <img id="Key" src="images\Key.png" width="56" height="56"/>
+        <img id="Check" src="images\Check.ico" width="61" height="61"/>
+
+        <!--========================================= LEFT TEXT ==========================================-->
+    	<div class="DataInput">
+    		<h1 id="B">BIENVENIDO</h1>
+    		<p class="IGT">INGRESA TUS DATOS</p>
+    		<h4 id="CU">Correo / Usuario</h4>
+    		<h4 id="Con">Contraseña</h4>
+    		<p id="Recordar" style="position: absolute; left: 588px; top: 755px; font-size: 20px; color: black; font-weight: lighter;">RECORDARME!!</p>
+    	</div>
+
+        <!--=========================================== INPUT ============================================-->
+    	<h:form id="form">
+        	<p:growl id="growl"  for="shiro" showDetail="true" sticky="true"/>
+        	<div class="form-group">
+        		<br/><p:inputText id="email" type="text" placeholder="Ingresa tu Correo" value="#{LoginBean.email}"
+        			  style="position: absolute; left: 554px; top: 565px; width: 544px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
+				<br/><p:inputText id="password" type="password" placeholder="Ingresa tu Contraseña" value="#{LoginBean.password}"
+				      style="position: absolute; left: 504px; top: 664px; width: 589px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
+				<br/><p:selectBooleanCheckbox id="Remember" value="#{LoginBean.remembered}"
+				      style="position: absolute; left: 775px; top: 770px; border-radius: 10px; width: 25px; height: 25px; opacity: 0.7;"/>
+				<br/><p:commandButton id="INGRESAR" value="INGRESAR" update="@form" action="#{LoginBean.doLogin}"
+					  style="position: absolute; left: 593px; top: 836px; background-color: black; border-color: black; width: 191px; height: 88px; font-weight: bold; font-size: 30px; border-radius: 30px;"/>
+        	</div>
+        </h:form>
+
+        <!--========================================= RIGHT TEXT =========================================-->
+    	<div class="Options">
+    		<p id="LI">LOG IN</p>
+    		<p id="R">REGISTRARSE</p>
+    	</div>
+    </h:body>
+
+</html>

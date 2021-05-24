@@ -1,0 +1,17 @@
+- TENER EN CUENTA LOS ELEMENTOS QUE CAMBIAN DE ESTADO Y QUIZAS ALGUNOS ATRIBUTOS FORANEOS PODRÍAN/DEBERÍAN QUEDAR NULOS.
+- SOLO n NECESIDADES POR USUARIO.
+- SOLO n OFERTAS POR USUARIO.
+
+- °Categoría debe tener un usuario que la creó.
+- °Las categorías solo las pueden crear los usuarios con rol Administrador.
+- De una categoria solo se puede modificar nombre, descripción y estado.
+- °Respuesta es sobre oferta o necesidad.
+- Solo el estudiante creador y el administrador pueden actualizar el estado de la necesidad.
+- Solo los estudiantes pueden crear Necesidades.
+- Todos pueden crear ofertas excepto el administrador.
+- solo respuestas a las ofertas/necesidades activas o en proceso.
+- Solo el usuario creador y el administrador pueden actualizar el estado de la oferta.
+
+
+
+

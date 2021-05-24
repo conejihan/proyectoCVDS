@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.RespuestaMapper">
+
+    <insert id="registrarRespuesta">
+        INSERT INTO Respuestas(titulo,descripcion,usuario,oferta,necesidad)
+        VALUES(#{titulo},#{descripcion},#{usuario},#{oferta},#{necesidad});
+    </insert>
+
+    <select id="consultarRespuestasPorOferta" resultMap="RespuestaResult">
+        SELECT
+            id_respuesta AS re_idrespuesta,
+            titulo AS re_titulo,
+            descripcion AS re_descripcion,
+            usuario AS re_usuario
+        FROM Respuestas
+        WHERE #{oferta} = oferta;
+    </select>
+
+    <select id="consultarRespuestasPorNecesidad" resultMap="RespuestaResult">
+        SELECT
+            id_respuesta AS re_idrespuesta,
+            titulo AS re_titulo,
+            descripcion AS re_descripcion,
+            usuario AS re_usuario
+        FROM Respuestas
+        WHERE #{necesidad} = necesidad;
+    </select>
+
+    <resultMap id="RespuestaResult" type="Respuesta">
+        <id property="id_respuesta" column="re_idrespuesta"/>
+        <result property="titulo" column="re_titulo" />
+        <result property="descripcion" column="re_descripcion" />
+        <result property="usuario" column="ne_usuario" />
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.CategoriaMapper">
+
+    <insert id="crearCategoria">
+        INSERT INTO Categorias(nombre,descripcion,estado,usuario,fecha_creacion,fecha_modificacion)
+        VALUES(#{nombre},#{descripcion},#{estado},#{usuario},#{fecha_creacion},#{fecha_modificacion});
+    </insert>
+
+    <select id="consultarCategorias" resultMap="CategoriaResult">
+        SELECT
+            id_categoria AS ca_idcategoria,
+            nombre AS ca_nombre,
+            descripcion AS ca_descripcion,
+            estado AS ca_estado,
+            fecha_creacion AS ca_fechacre,
+            fecha_modificacion AS ca_fechamod
+        FROM Categorias;
+    </select>
+
+    <update id="actualizarCategoriaPorID">
+        UPDATE Categorias
+        SET nombre = #{nombre}, descripcion = #{descripcion}, estado = #{estado}, fecha_modificacion = CURRENT_DATE
+        WHERE id_categoria = #{ID};
+    </update>
+
+    <resultMap id="CategoriaResult" type="Categoria">
+        <id property="id_categoria" column="ca_idcategoria"/>
+        <result property="nombre" column="ca_nombre" />
+        <result property="descripcion" column="ca_descripcion" />
+        <result property="estado" column="ca_estado" />
+        <result property="fecha_creacion" column="ca_fechacre" />
+        <result property="fecha_modificacion" column="ca_fechamod" />
+    </resultMap>
+
+</mapper>

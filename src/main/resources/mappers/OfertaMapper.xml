@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.OfertaMapper">
+
+    <insert id="registrarOferta">
+        INSERT INTO Ofertas(nombre,descripcion,estado,categoria,usuario,fecha_creacion,fecha_modificacion)
+        VALUES(#{nombre},#{descripcion},#{estado},#{categoria},#{usuario},#{fecha_creacion},#{fecha_modificacion});
+    </insert>
+
+    <select id="consultarOfertas" resultMap="OfertaResult">
+        SELECT
+            id_oferta AS of_idoferta,
+            nombre AS of_nombre,
+            descripcion AS of_descripcion,
+            estado AS of_estado,
+            categoria AS of_categoria,
+            usuario AS of_usuario,
+            fecha_creacion AS of_fecha_creacion,
+            fecha_modificacion AS of_fecha_modificacion
+        FROM Ofertas;
+    </select>
+
+    <select id="consultarOfertasPorEstado" resultMap="OfertaResult">
+        SELECT
+            id_oferta AS of_idoferta,
+            nombre AS of_nombre,
+            descripcion AS of_descripcion,
+            estado AS of_estado,
+            categoria AS of_categoria,
+            usuario AS of_usuario,
+            fecha_creacion AS of_fecha_creacion,
+            fecha_modificacion AS of_fecha_modificacion
+        FROM Ofertas
+        WHERE #{estado} = estado;
+    </select>
+
+    <select id="consultarNecesidadesPorCategoria" resultMap="OfertaResult">
+        SELECT
+            id_oferta AS of_idoferta,
+            nombre AS of_nombre,
+            descripcion AS of_descripcion,
+            estado AS of_estado,
+            categoria AS of_categoria,
+            usuario AS of_usuario,
+            fecha_creacion AS of_fecha_creacion,
+            fecha_modificacion AS of_fecha_modificacion
+        FROM Ofertas
+        WHERE #{categoria} = categoria;
+    </select>
+
+    <select id="consultarOfertaPorID" resultMap="OfertaResult">
+        SELECT
+            id_oferta AS of_idoferta,
+            nombre AS of_nombre,
+            descripcion AS of_descripcion,
+            estado AS of_estado,
+            categoria AS of_categoria,
+            usuario AS of_usuario,
+            fecha_creacion AS of_fecha_creacion,
+            fecha_modificacion AS of_fecha_modificacion
+        FROM Ofertas
+        WHERE #{ID} = id_oferta;
+    </select>
+
+    <update id="actualizarEstadoOfertaPorID">
+        UPDATE Ofertas
+        SET estado = #{estado}, fecha_modificacion = CURRENT_DATE
+        WHERE id_oferta = #{ID};
+    </update>
+
+    <resultMap id="OfertaResult" type="Oferta">
+        <id property="id_oferta" column="of_idoferta"/>
+        <result property="nombre" column="of_nombre" />
+        <result property="descripcion" column="of_descripcion" />
+        <result property="estado" column="of_estado" />
+        <result property="categoria" column="of_categoria" />
+        <result property="usuario" column="of_usuario" />
+        <result property="fecha_creacion" column="of_fecha_creacion" />
+        <result property="fecha_modificacion" column="of_fecha_modificacion" />
+    </resultMap>
+
+</mapper>

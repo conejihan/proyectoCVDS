@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.ComentarioMapper">
+
+    <insert id="registrarComentario">
+        INSERT INTO Comentarios(comentario,respuesta,usuario)
+        VALUES(#{comentario},#{respuesta},#{usuario});
+    </insert>
+
+    <select id="consultarComentarios" resultMap="ComentarioResult">
+        SELECT
+            id_comentario AS co_idcomentario,
+            comentario AS co_comentario,
+            respuesta AS co_respuesta,
+            usuario AS co_usuario
+        FROM Comentarios;
+    </select>
+
+    <select id="consultarComentariosPorRespuesta" resultMap="ComentarioResult">
+        SELECT
+            id_comentario AS co_idcomentario,
+            comentario AS co_comentario,
+            respuesta AS co_respuesta,
+            usuario AS co_usuario
+        FROM Comentarios
+        WHERE #{respuesta}=respuesta;
+    </select>
+
+    <resultMap id="ComentarioResult" type="Comentario">
+        <id property="id_comentario" column="co_idcomentario"/>
+        <result property="comentario" column="co_comentario" />
+        <result property="respuesta" column="co_respuesta" />
+        <result property="usuario" column="co_usuario" />
+    </resultMap>
+
+</mapper>

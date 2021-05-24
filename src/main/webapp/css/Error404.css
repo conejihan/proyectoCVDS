@@ -1,0 +1,51 @@
+body {
+    background-color: black;
+}
+
+.div1 {
+    height: 300px;
+    width: 600px;
+    margin: 250px auto;
+    background: url("../images/e-404.jpg") no-repeat center;
+    background-size: contain;
+}
+
+.div2 {
+    color: #ffffff;
+    font-family: Arial;
+    position: relative;
+    top: 10%;
+    margin-top: -700px;
+}
+
+.div2 h1 {
+    font-size: 60px;
+    margin-bottom: 40px;
+    line-height: 25px;
+}
+
+.buttons{
+    width: fit-content;
+    font-family: Arial;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 57vh;
+}
+
+.buttons .action a {
+    background: #00e87b;
+    padding: 8px 20px;
+    border-radius: 7px;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+.buttons .action a:hover {
+    background: #fd1a84;
+    color: white;
+}
