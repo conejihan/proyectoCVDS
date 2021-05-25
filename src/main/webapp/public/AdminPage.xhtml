@@ -6,6 +6,7 @@
 <h:head>
     <title> Solidaridad Escuela | Administrador </title>
     <link rel="stylesheet" href="WEB-INF/css/style.css"/>
+    <!--<link rel="stylesheet" href="../css/AdminPage.css"/>-->
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <script src="../icons.js" crossorigin="anonymous"></script>
 </h:head>
@@ -19,7 +20,9 @@
     align-items: center;
     justify-content: center;
     height: 800px;
+    background: url("./graphics/wide/bg-content-secondary.gif") repeat-y;
 }
+
 
 i {
     font-size:64px;
@@ -70,12 +73,13 @@ p {
 
 
 
+
 </style>
 <h:body>
     <h:form id="admin">
         <div class="container">
             <div class="cards">
-                <a href="/Categoria.xhtml">
+                <a href="/public/Categoria.xhtml">
                     <div class="card">
                         <i class="fas fa-list"></i>
                         <p style="text-align: center; font-size: 24px; color: #7e1323;">Categorias</p>
