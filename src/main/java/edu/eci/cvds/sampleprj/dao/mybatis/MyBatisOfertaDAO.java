@@ -30,4 +30,9 @@ public class MyBatisOfertaDAO implements OfertaDAO{
     public List<Oferta> consultarOfertasPorEstado(String estado) {
         return ofertaMapper.consultarOfertasPorEstado(estado);
     }
+
+    @Override
+    public void eliminarOferta(int ID) {
+        ofertaMapper.eliminarOferta(ID);
+    }
 }

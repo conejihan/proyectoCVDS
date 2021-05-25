@@ -1,45 +1,123 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-<head>
-    <meta charset="UTF-8"></meta>
-    <link rel="stylesheet" href="../style/bootstrap.min.css"/>
-    <title>SolidaridadApp</title>
-    <link rel="stylesheet" href="css/index.css"/>
-</head>
-<body>
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-    </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-    </tr>
-    </tbody>
-</table>
-</body>
+<h:head>
+    <title> Solidaridad Escuela | Administrador </title>
+    <link rel="stylesheet" href="WEB-INF/css/style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="../icons.js" crossorigin="anonymous"></script>
+</h:head>
+
+<style>
+.form {
+    width: 100%;
+}
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+}
+
+i {
+    font-size:64px;
+    margin-bottom: 30px;
+    color: #7e1323;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    line-height: 1em;
+    width: 425px;
+    margin: auto;
+}
+
+p {
+    width: 50%;
+    display: block;
+    margin: 25px;
+    text-align: justify;
+}
+
+
+.card {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: #4222f5;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    -webkit-box-shadow: -1px 10px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: -1px 10px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: -1px 10px 5px 0px rgba(0,0,0,0.4);
+    transition: 0.5s;
+    height: 500px;
+    width: 90%;
+}
+.card:hover{
+    -webkit-box-shadow: 0px 0px 34px 8px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 0px 34px 8px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 34px 8px rgba(0,0,0,0.4);
+}
+
+
+
+</style>
+<h:body>
+    <h:form id="admin">
+        <div class="container">
+            <div class="cards">
+                <a href="/Categoria.xhtml">
+                    <div class="card">
+                        <i class="fas fa-list"></i>
+                        <p style="text-align: center; font-size: 24px; color: #7e1323;">Categorias</p>
+                        <p>Clasifica las diferentes ofertas y necesidades que están expuestas.</p>
+                    </div>
+                </a>
+
+                <a href="/Necesidad.xhtml">
+                    <div class="card">
+                        <i class="fas fa-book"></i>
+                        <p style="text-align: center; font-size: 24px; color: #7e1323;">Necesidades</p>
+                        <p>Solicita ayuda de los miembros de la comunidad para solventar alguna necesidad.</p>
+                    </div>
+                </a>
+
+                <a href="/faces/Roles/Oferta.xhtml">
+                    <div class="card">
+                        <i class="fas fa-lightbulb"></i>
+                        <p style="text-align: center; font-size: 24px; color: #7e1323;">Ofertas</p>
+                        <p>Presenta un elemento que podría beneficiar a algún miembro de la comunidad.</p>
+                    </div>
+                </a>
+
+                <a href="/Usuarios.xhtml">
+                    <div class="card">
+                        <i class="fas fa-user"></i>
+                        <p style="text-align: center; font-size: 24px; color: #7e1323;">Usuarios</p>
+                        <p>Manejar acceso y permisos de los usuarios.</p>
+                    </div>
+                </a>
+
+                <a href="/Respuestas.xhtml">
+                    <div class="card">
+                        <i class="fas fa-question"></i>
+                        <p style="text-align: center; font-size: 24px; color: #7e1323;">Respuestas</p>
+                        <p>Indicar interes en alguna publicación realizada.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <svg style="margin: 0; position:absolute; bottom: 0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+        </svg>
+    </h:form>
+</h:body>
 </html>

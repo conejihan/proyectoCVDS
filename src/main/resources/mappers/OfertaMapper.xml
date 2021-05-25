@@ -11,55 +11,55 @@
 
     <select id="consultarOfertas" resultMap="OfertaResult">
         SELECT
-            id_oferta AS of_idoferta,
-            nombre AS of_nombre,
-            descripcion AS of_descripcion,
-            estado AS of_estado,
-            categoria AS of_categoria,
-            usuario AS of_usuario,
-            fecha_creacion AS of_fecha_creacion,
-            fecha_modificacion AS of_fecha_modificacion
+        id_oferta AS of_idoferta,
+        nombre AS of_nombre,
+        descripcion AS of_descripcion,
+        estado AS of_estado,
+        categoria AS of_categoria,
+        usuario AS of_usuario,
+        fecha_creacion AS of_fecha_creacion,
+        fecha_modificacion AS of_fecha_modificacion
         FROM Ofertas;
     </select>
 
     <select id="consultarOfertasPorEstado" resultMap="OfertaResult">
         SELECT
-            id_oferta AS of_idoferta,
-            nombre AS of_nombre,
-            descripcion AS of_descripcion,
-            estado AS of_estado,
-            categoria AS of_categoria,
-            usuario AS of_usuario,
-            fecha_creacion AS of_fecha_creacion,
-            fecha_modificacion AS of_fecha_modificacion
+        id_oferta AS of_idoferta,
+        nombre AS of_nombre,
+        descripcion AS of_descripcion,
+        estado AS of_estado,
+        categoria AS of_categoria,
+        usuario AS of_usuario,
+        fecha_creacion AS of_fecha_creacion,
+        fecha_modificacion AS of_fecha_modificacion
         FROM Ofertas
         WHERE #{estado} = estado;
     </select>
 
     <select id="consultarNecesidadesPorCategoria" resultMap="OfertaResult">
         SELECT
-            id_oferta AS of_idoferta,
-            nombre AS of_nombre,
-            descripcion AS of_descripcion,
-            estado AS of_estado,
-            categoria AS of_categoria,
-            usuario AS of_usuario,
-            fecha_creacion AS of_fecha_creacion,
-            fecha_modificacion AS of_fecha_modificacion
+        id_oferta AS of_idoferta,
+        nombre AS of_nombre,
+        descripcion AS of_descripcion,
+        estado AS of_estado,
+        categoria AS of_categoria,
+        usuario AS of_usuario,
+        fecha_creacion AS of_fecha_creacion,
+        fecha_modificacion AS of_fecha_modificacion
         FROM Ofertas
         WHERE #{categoria} = categoria;
     </select>
 
     <select id="consultarOfertaPorID" resultMap="OfertaResult">
         SELECT
-            id_oferta AS of_idoferta,
-            nombre AS of_nombre,
-            descripcion AS of_descripcion,
-            estado AS of_estado,
-            categoria AS of_categoria,
-            usuario AS of_usuario,
-            fecha_creacion AS of_fecha_creacion,
-            fecha_modificacion AS of_fecha_modificacion
+        id_oferta AS of_idoferta,
+        nombre AS of_nombre,
+        descripcion AS of_descripcion,
+        estado AS of_estado,
+        categoria AS of_categoria,
+        usuario AS of_usuario,
+        fecha_creacion AS of_fecha_creacion,
+        fecha_modificacion AS of_fecha_modificacion
         FROM Ofertas
         WHERE #{ID} = id_oferta;
     </select>
@@ -69,6 +69,11 @@
         SET estado = #{estado}, fecha_modificacion = CURRENT_DATE
         WHERE id_oferta = #{ID};
     </update>
+
+    <delete id="eliminarOferta">
+        DELETE FROM Ofertas
+        WHERE id_oferta = #{ID};
+    </delete>
 
     <resultMap id="OfertaResult" type="Oferta">
         <id property="id_oferta" column="of_idoferta"/>

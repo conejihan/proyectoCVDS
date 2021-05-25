@@ -25,4 +25,7 @@ public class MyBatisCategoriaDAO implements CategoriaDAO {
     public List<Categoria> consultarCategorias() {
         return categoriaMapper.consultarCategorias();
     }
+
+    @Override
+    public void eliminarCategoria(Categoria categoria){categoriaMapper.eliminarCategoria(categoria);}
 }

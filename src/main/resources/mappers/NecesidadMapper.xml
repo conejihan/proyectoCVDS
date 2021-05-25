@@ -11,59 +11,59 @@
 
     <select id="consultarNecesidades" resultMap="NecesidadResult">
         SELECT
-            id_necesidad AS ne_idnecesidad,
-            nombre AS ne_nombre,
-            descripcion AS ne_descripcion,
-            urgencia AS ne_urencia,
-            estado AS ne_estado,
-            categoria AS ne_categoria,
-            usuario AS ne_usuario,
-            fecha_creacion AS ne_fechacre,
-            fecha_modificacion AS ne_fechamod
+        id_necesidad AS ne_idnecesidad,
+        nombre AS ne_nombre,
+        descripcion AS ne_descripcion,
+        urgencia AS ne_urencia,
+        estado AS ne_estado,
+        categoria AS ne_categoria,
+        usuario AS ne_usuario,
+        fecha_creacion AS ne_fechacre,
+        fecha_modificacion AS ne_fechamod
         FROM Necesidades;
     </select>
 
     <select id="consultarNecesidadesPorEstado" resultMap="NecesidadResult">
         SELECT
-            id_necesidad AS ne_idnecesidad,
-            nombre AS ne_nombre,
-            descripcion AS ne_descripcion,
-            urgencia AS ne_urencia,
-            estado AS ne_estado,
-            categoria AS ne_categoria,
-            usuario AS ne_usuario,
-            fecha_creacion AS ne_fechacre,
-            fecha_modificacion AS ne_fechamod
+        id_necesidad AS ne_idnecesidad,
+        nombre AS ne_nombre,
+        descripcion AS ne_descripcion,
+        urgencia AS ne_urencia,
+        estado AS ne_estado,
+        categoria AS ne_categoria,
+        usuario AS ne_usuario,
+        fecha_creacion AS ne_fechacre,
+        fecha_modificacion AS ne_fechamod
         FROM Necesidades
         WHERE #{estado} = estado;
     </select>
 
     <select id="consultarNecesidadesPorCategoria" resultMap="NecesidadResult">
         SELECT
-            id_necesidad AS ne_idnecesidad,
-            nombre AS ne_nombre,
-            descripcion AS ne_descripcion,
-            urgencia AS ne_urencia,
-            estado AS ne_estado,
-            categoria AS ne_categoria,
-            usuario AS ne_usuario,
-            fecha_creacion AS ne_fechacre,
-            fecha_modificacion AS ne_fechamod
+        id_necesidad AS ne_idnecesidad,
+        nombre AS ne_nombre,
+        descripcion AS ne_descripcion,
+        urgencia AS ne_urencia,
+        estado AS ne_estado,
+        categoria AS ne_categoria,
+        usuario AS ne_usuario,
+        fecha_creacion AS ne_fechacre,
+        fecha_modificacion AS ne_fechamod
         FROM Necesidades
         WHERE #{categoria} = categoria;
     </select>
 
     <select id="consultarNecesidadPorID" resultMap="NecesidadResult">
         SELECT
-            id_necesidad AS ne_idnecesidad,
-            nombre AS ne_nombre,
-            descripcion AS ne_descripcion,
-            urgencia AS ne_urencia,
-            estado AS ne_estado,
-            categoria AS ne_categoria,
-            usuario AS ne_usuario,
-            fecha_creacion AS ne_fechacre,
-            fecha_modificacion AS ne_fechamod
+        id_necesidad AS ne_idnecesidad,
+        nombre AS ne_nombre,
+        descripcion AS ne_descripcion,
+        urgencia AS ne_urencia,
+        estado AS ne_estado,
+        categoria AS ne_categoria,
+        usuario AS ne_usuario,
+        fecha_creacion AS ne_fechacre,
+        fecha_modificacion AS ne_fechamod
         FROM Necesidades
         WHERE #{ID} = id_necesidad;
     </select>
@@ -73,6 +73,12 @@
         SET estado = #{estado}, fecha_modificacion = CURRENT_DATE
         WHERE id_necesidad = #{ID};
     </update>
+
+
+    <delete id="eliminarNecesidad" parameterType="map">
+        DELETE FROM necesidades
+        WHERE id_necesidad = #{ID};
+    </delete>
 
     <resultMap id="NecesidadResult" type="Necesidad">
         <id property="id_necesidad" column="ne_idnecesidad"/>
@@ -87,3 +93,4 @@
     </resultMap>
 
 </mapper>
+
