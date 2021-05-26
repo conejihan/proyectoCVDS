@@ -1,6 +1,14 @@
+html {
+    background-image: linear-gradient(to top, #000000, #250000, #580000, #960000, #ff0000);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
 .form {
     width: 100%;
 }
+
 .cards {
     display: flex;
     align-items: center;

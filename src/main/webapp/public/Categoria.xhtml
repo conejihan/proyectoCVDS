@@ -8,22 +8,57 @@
     <link rel="stylesheet" type="text/css" href= "../css/categoria.css" media="screen"/>
 </h:head>
 <body>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <!--SQURES - RECTANGLES-->
+    <rect id="WelcomeRec" x="80" y="80" width="505" height="145" rx="40" ry="40" fill="White"/>
+    <rect id="BigRec" x="211" y="288" width="1000" height="800" rx="40" ry="40" fill="White"/>
+</svg>
 <br/>
 <center>
-    <h1>Categoria</h1>
+    <h1>CATEGORIA</h1>
 </center>
 
 <div class="registro">
 
-    <p:outputLabel value="ID"/>
-    <p:inputText type="int"/>
-    <p:outputLabel value="Nombre"/>
-    <p:inputText type="String" binding="#{nombre}"/>
-    <p:outputLabel value="Descripcion"/>
-    <p:inputText type="String" binding="#{descripcion}"/>
-    <p:outputLabel value="Estado"/>
-    <p:inputText type ="String" binding="#{estado}"/>
-    <p:commandButton value="Crear" />
+    <p:outputLabel value="ID"
+                   style="position: absolute; left: 400px; top: 350px; width: 544px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
+
+    <p:inputText type="int"
+                 style="position: absolute; left: 504px; top: 320px; width: 589px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
+
+
+
+    <p:outputLabel value="Nombre"
+                   style="position: absolute; left: 400px; top: 480px; width: 589px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
+
+    <p:inputText type="String" binding="#{nombre}"
+                 style="position: absolute; left: 500px; top: 460px; width: 589px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
+
+
+    <p:outputLabel value="Descripcion"
+                   style="position: absolute; left: 400px; top: 660px; width: 589px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
+
+
+    <p:inputText type="String" binding="#{descripcion}"
+                 style="position: absolute; left: 500px; top: 630px; width: 589px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
+
+
+    <p:outputLabel value="Estado"
+                   style="position: absolute; left: 400px; top: 800px; width: 589px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
+
+
+
+    <p:inputText type ="String" binding="#{estado}"
+                 style="position: absolute; left: 500px; top: 790px; width: 589px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
+
+
+
+    <p:commandButton value="Crear"
+                     style="position: absolute; left: 500px; top: 900px; width: 589px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
+
+
+
+
 </div>
 </body>
 </html>
