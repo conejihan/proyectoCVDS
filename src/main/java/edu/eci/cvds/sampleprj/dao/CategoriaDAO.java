@@ -10,5 +10,7 @@ public interface CategoriaDAO{
 	void crearCategoria(Categoria categoria);
 	void actualizarCategoriaPorID(int Id, String nombre, String descripcion, String estado);
 	List<Categoria> consultarCategorias();
-	void eliminarCategoria(@Param("Categoria") Categoria categoria);
+	void eliminarCategoria(Categoria categoria);
+	List<Categoria>  consultarCategoriaPorID(int id);
+	List<Categoria>  consultarCategoriaPorNombre(String nombre);
 }

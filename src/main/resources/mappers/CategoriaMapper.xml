@@ -20,6 +20,31 @@
     FROM Categorias;
 </select>
 
+    <select id="consultarCategoriaPorID" resultMap="CategoriaResult">
+        SELECT
+        id_categoria AS ca_idcategoria,
+        nombre AS ca_nombre,
+        descripcion AS ca_descripcion,
+        estado AS ca_estado,
+        fecha_creacion AS ca_fechacre,
+        fecha_modificacion AS ca_fechamod
+        FROM Categorias
+        WHERE id_categoria = #{ID};
+
+    </select>
+    <select id="consultarCategoriaPorNombre" resultMap="CategoriaResult">
+        SELECT
+        id_categoria AS ca_idcategoria,
+        nombre AS ca_nombre,
+        descripcion AS ca_descripcion,
+        estado AS ca_estado,
+        fecha_creacion AS ca_fechacre,
+        fecha_modificacion AS ca_fechamod
+        FROM Categorias
+        WHERE nombre = #{nombre};
+
+    </select>
+
 <update id="actualizarCategoriaPorID">
     UPDATE Categorias
     SET nombre = #{nombre}, descripcion = #{descripcion}, estado = #{estado}, fecha_modificacion = CURRENT_DATE

@@ -11,4 +11,6 @@ public interface CategoriaMapper {
     void actualizarCategoriaPorID(@Param("ID") int Id,@Param("nombre") String nombre,@Param("descripcion") String descripcion,@Param("estado") String estado);
     List<Categoria> consultarCategorias();
     void eliminarCategoria(@Param("Categoria") Categoria categoria);
+    List<Categoria> consultarCategoriaPorID(@Param("id")int id);
+    List<Categoria> consultarCategoriaNombre(@Param("nombre")String nombre);
 }

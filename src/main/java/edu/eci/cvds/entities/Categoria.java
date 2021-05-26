@@ -1,5 +1,8 @@
 package edu.eci.cvds.entities;
 
+import java.time.LocalDate;
+import java.sql.Date;
+
 /**
  * @author Juan Camilo Gil
  * @author Leidy Marcela Ducuara
@@ -13,12 +16,21 @@ public class Categoria{
 	private String descripcion;
 	private String estado;
 	private int usuario;
-	private String fechaCreacion;
-	private String fechaModificacion;
+	private Date fechaCreacion;
+	private Date fechaModificacion;
+	private LocalDate hoy = LocalDate.now();
 
 	public Categoria(){}
+	public Categoria(int id_categoria ,String nombre,String descripcion ,String estado){
+		this.id_categoria=id_categoria;
+		this.nombre=nombre;
+		this.descripcion=descripcion;
+		this.estado=estado;
+		this.fechaCreacion = Date.valueOf(hoy);
+		this.fechaModificacion = Date.valueOf(hoy);
+	}
 
-	public Categoria(int id_categoria, String nombre, String descripcion, String estado, int usuario, String fechaCreacion, String fechaModificacion){
+	public Categoria(int id_categoria, String nombre, String descripcion, String estado, int usuario, Date fechaCreacion, Date fechaModificacion){
 		this.id_categoria = id_categoria;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
@@ -68,19 +80,19 @@ public class Categoria{
 		this.usuario = usuario;
 	}
 
-	public String getFechaCreacion() {
+	public Date getFechaCreacion() {
 		return fechaCreacion;
 	}
 
-	public void setFechaCreacion(String fechaCreacion) {
+	public void setFechaCreacion(Date fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
 	}
 
-	public String getFechaModificacion() {
+	public Date getFechaModificacion() {
 		return fechaModificacion;
 	}
 
-	public void setFechaModificacion(String fechaModificacion) {
+	public void setFechaModificacion(Date fechaModificacion) {
 		this.fechaModificacion = fechaModificacion;
 	}
 }
