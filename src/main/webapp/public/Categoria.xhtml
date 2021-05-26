@@ -22,9 +22,10 @@
 
     <p:outputLabel value="ID"
                    style="position: absolute; left: 400px; top: 350px; width: 544px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
-
-    <p:inputText type="int"
-                 style="position: absolute; left: 504px; top: 320px; width: 589px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
+    <br/>
+    <br/>
+    <p:outputLabel type="int" value="#{serviciosSolidaridad.consultarCategorias().size()+1}"
+                    style="position: absolute; left: 504px; top: 320px; width: 589px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
 
 
 
@@ -53,7 +54,7 @@
 
 
 
-    <p:commandButton value="Crear"
+    <p:commandButton value="Crear" 
                      style="position: absolute; left: 500px; top: 900px; width: 589px; height: 55px; border-radius: 30px; opacity: 0.5;"/>
 
 
