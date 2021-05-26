@@ -1,5 +1,5 @@
 html {
-    background-image: linear-gradient(to top, #d17994, #f38986, #ffa272, #ffc362, #eee864);
+    background-image: linear-gradient(to top, #000000, #250000, #580000, #960000, #ff0000);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -16,7 +16,7 @@ h1 {
 
 body h4 {
 	font-weight: normal;
-	font-size: 40px;	
+	font-size: 40px;
 }
 
 body p {
@@ -29,7 +29,7 @@ body p {
 }
 
 .IGT {
-	position: absolute; left: 490px; top: 310px;	
+	position: absolute; left: 490px; top: 310px;
 }
 #LI {
 	position: absolute; left: 1568px; top: 248px;
@@ -73,3 +73,5 @@ body p {
 #MsgRec {
 	opacity: 0.2;
 }
+#WelcomeRec, #LoginRec, #RegisterRec, #LoginCircle, #RegisterCircle {
+    opacity: 0%;

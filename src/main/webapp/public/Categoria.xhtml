@@ -5,9 +5,28 @@
       xmlns:p="http://primefaces.org/ui">
 <h:head>
     <title> Solidaridad Escuela | Administrador </title>
-
+    <link rel="stylesheet" type="text/css" href= "css/categoria.css" media="screen"/>
 </h:head>
 <body>
-   <h1>categoria</h1>
+    <br/>
+    <center>
+   <h1>Categoria</h1>
+    </center>
+
+    <div class="registro">
+
+        <p:outputLabel value="ID"/>
+        <p:inputText />
+        <p:outputLabel value="Nombre"/>
+        <p:inputText type="String" binding="#{nombre}"/>
+        <p:outputLabel value="Descripcion"/>
+        <p:inputText type="String" binding="#{descripcion}"/>
+        <p:outputLabel value="Estado"/>
+        <p:selectOneMenu binding="#{estado}">
+            <f:selectItem itemValue="Valida"/>
+            <f:selectItem itemValue="Invalida"/>
+        </p:selectOneMenu>
+        <!--<p:commandButton value="Crear" actionListener="#{serviciosSolidaridad.registrarCategorias(serviciosSolidaridad.consultarCategorias().size()+1,nombre.value,descripcion.value,estado.value)}"/>-->
+        </div>
 </body>
 </html>
